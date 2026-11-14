@@ -1,0 +1,113 @@
+- title: "Auditable Unlearning for LLMs"
+  detail_title: "Widen the Gap, Hide the Gap: Auditable and Indistinguishable Unlearning for LLMs"
+  slug: auditable-unlearning
+  project_url: /research/auditable-unlearning/
+  type_badge: arXiv Preprint · Nov 2026
+  topics:
+    - Machine Unlearning
+    - LLMs
+  date: 2026-11-01
+  pub: arXiv Preprint
+  pub_post: " · Representation Learning Lab, IISc ·"
+  pub_date: "2026"
+  abstract: >-
+    Investigates how to make LLM unlearning provably auditable by model providers while keeping generated outputs indistinguishable against membership-inference attacks, combining a post-unlearning objective (GapWiden) with divergence-guided rejection sampling (GapVeil).
+  cover: /assets/images/research-unlearning.png
+  hero_image: /assets/images/unlearning-hero.png
+  authors:
+    - Piyush Tiwary
+    - Anushka Srivastava
+    - A. P. Prathosh
+  links:
+    arXiv:
+      url: https://arxiv.org/abs/2611.05866
+      target: _blank
+  paper_url: https://arxiv.org/abs/2611.05866
+  paper_button: "[arXiv]"
+  detail_metadata: arXiv Preprint, 2026
+  problem_heading: "The Problem: A Missing Objective in Machine Unlearning"
+  problem_paragraphs:
+    - >-
+      An effective machine unlearning method must remove target knowledge (<strong>forgetting</strong>), preserve general capabilities (<strong>retention</strong>), and prevent external users from identifying which data was unlearned (<strong>membership-inference resistance</strong>). However, these objectives leave an important question unanswered: how can a model provider establish, through statistical evidence, that the requested knowledge has actually been removed?
+    - >-
+      We introduce <strong>auditability</strong> as a fourth objective: providing the model provider with statistical evidence that forgetting has occurred. This introduces a fundamental tension. Increasing the statistical difference between the original and unlearned models makes forgetting easier for the provider to verify, but can also make forgotten data easier for external attackers to identify through membership-inference attacks.
+    - >-
+      Evaluating 11 existing unlearning methods across TOFU, MUSE, and RWKU, we found that none consistently satisfied all four objectives. Methods either lacked reliable auditability, exposed forgotten data to membership-inference attacks, or degraded general model utility.
+  insight_heading: "Core Insight: Separate the Provider's View From the User's View"
+  insight_paragraph: >-
+    By analyzing hidden states, logits, and model outputs, we found that the statistical divergence between the output distributions of the base and unlearned models consistently separates forgotten prompts from retained ones.
+  insight_lead: "This creates an opportunity to separate the provider's ability to audit forgetting from an external user's ability to detect it:"
+  insight_bullets:
+    - >-
+      <strong>Provider View (Internal):</strong> The provider has access to both models and can use their statistical divergence as an audit signal.
+    - >-
+      <strong>User View (External):</strong> Users only observe generated outputs. Decoding-time filtering can therefore conceal the signals that would otherwise expose unlearned data to external attacks.
+  approach_heading: "Our Approach: <em>GapWiden</em> + <em>GapVeil</em>"
+  approach_bullets:
+    - >-
+      <strong>GapWiden (Post-Unlearning Objective):</strong> For baselines where forget and retain scores overlap, we apply a lightweight objective to increase their separation. A margin-bounded hinge loss pushes forgotten prompts beyond an audit threshold, while a Huber loss keeps retained prompts anchored near zero. The objective stops pushing once the margin is reached, limiting unnecessary weight changes.
+    - >-
+      <strong>GapVeil (Divergence-Guided Decoding):</strong> At inference time, we draft candidate responses from the fluent base model, using a short token-suppression warm-up to avoid regenerating forgotten tokens at the start. Candidates scoring in the forget regime are rejected, allowing the system to preserve fluent generation while reducing externally detectable evidence of unlearned data.
+  findings_heading: Key Findings
+  findings_lead: >-
+    Applied as a plug-and-play wrapper across 11 unlearning baselines on TOFU, MUSE, and RWKU, <em>GapWiden</em> and <em>GapVeil</em> bring existing methods closer to a retrained-from-scratch oracle. The following mean scores are across the 11 baselines on TOFU:
+  findings_bullets:
+    - >-
+      Improve mean provider <strong>auditability (AUROC)</strong> from <strong>0.91 to 0.998</strong>.
+    - >-
+      Improve <strong>membership-inference resistance</strong> from <strong>0.77 to 0.997</strong>.
+    - >-
+      Achieve <strong>oracle-level forgetting (0.90)</strong> while improving mean <strong>retain utility</strong> from <strong>0.54 to 0.72</strong> across 9 of 11 baselines.
+  next_slug: vr-driver-performance
+  next_relation: Next Research Project
+- title: "Evaluating Driver Performance from Biosignals in VR Simulation"
+  detail_title: "Evaluating Driver Performance from Psychophysiological Signals in VR Simulation"
+  slug: vr-driver-performance
+  project_url: /research/vr-driver-performance/
+  type_badge: Undergraduate Thesis · 2024
+  topics:
+    - Multimodal ML
+    - HCI / Biosignals
+  date: 2024-05-01
+  pub: Undergraduate Thesis, IIT Kharagpur
+  pub_post: " · HCI-BCI Lab · Advised by Prof. Debasis Samanta ·"
+  pub_date: "2024"
+  abstract: >-
+    Built a custom 3-level Unity VR driving simulator and trained a multimodal ML/DL ensemble to evaluate driver performance from predicted performance-shaping factors (attention, anxiety, and mental workload) using synchronized EEG, ECG, and pulse signals across 25 participants.
+  cover: /assets/images/research-btp.png
+  metadata: B.Tech Thesis, IIT Kharagpur · HCI-BCI Lab · Advised by Prof. Debasis Samanta
+  detail_metadata: B.Tech Thesis, IIT Kharagpur · HCI-BCI Lab · Advised by Prof. Debasis Samanta · 2024
+  hero_image: /assets/images/btp-hero.png
+  problem_heading: "Assessing Cognitive Readiness for Driving"
+  problem_paragraphs:
+    - >-
+      Assessing whether a driver can handle demanding or unexpected situations is difficult using verbal responses and post-task questionnaires alone. A driver may not be able to accurately report changes in their attention, anxiety, or mental workload while navigating a challenging situation. Physiological signals offer another way to assess these factors: rather than relying only on what a driver reports, we can examine changes in brain activity and cardiac signals while they drive. The goal of this project was to explore whether these signals could help estimate a driver's cognitive state and, in turn, provide a more objective assessment of driving performance.
+  design_heading: Experimental Design & Multimodal Data Collection
+  design_paragraphs:
+    - >-
+      We built a three-scenario Unity VR driving simulator, with scenarios designed around NASA MATB-II task dimensions. The scenarios introduced progressively more demanding conditions, including turns, rainy roads, construction zones, animal crossings, and unexpected road events.
+    - >-
+      During each session, we recorded EEG, ECG, and pulse signals to capture participants' physiological responses.
+  design_bullets:
+    - >-
+      <strong>Establishing Ground Truth:</strong> Since the same driving situation can affect different people differently, we did not use scenario difficulty alone to label cognitive states. Mental workload and anxiety were assessed using NASA-TLX and the State-Trait Anxiety Inventory (STAI), while attention labels were derived from the frequency and severity of driving errors.
+    - >-
+      <strong>Aligning Signals with Driving Events:</strong> The simulator recorded event timestamps, which were used alongside the physiological recordings to associate changes in EEG, ECG, and pulse signals with events during the driving sessions.
+  approach_heading: "Two-Stage Approach: From Biosignals to Driver Performance"
+  approach_intro: >-
+    We approached human performance evaluation in two stages: first estimating the factors that influence driving performance from physiological signals, and then using those estimates to evaluate overall performance.
+  approach_bullets:
+    - >-
+      <strong>Stage 1: Predicting Performance-Shaping Factors:</strong> We extracted features from EEG, ECG, and pulse recordings and trained machine learning (ML) and deep learning (DL) models to predict attention, anxiety, and mental workload. For each factor, we selected the best-performing ML and DL model for each of the three signals, giving six model predictions per factor. We combined these predictions using majority voting to obtain the final estimate.
+    - >-
+      <strong>Stage 2: Human Performance Evaluation:</strong> We used the predicted attention, anxiety, and mental workload levels as inputs to a second-stage evaluation model. We explored heuristic rules, regression methods, and ML classifiers to derive an overall human performance assessment.
+  findings_heading: Key Findings
+  findings_bullets:
+    - >-
+      <strong>Cognitive State Prediction:</strong> The six-model voting ensemble achieved 83.78% accuracy for attention, 91.92% for anxiety, and 84.67% for mental workload.
+    - >-
+      <strong>Human Performance Evaluation:</strong> The Random Forest classifier achieved 86.4% accuracy in the second stage, compared with 74.8% for linear regression and 81.8% for logistic regression.
+  closing_paragraph: >-
+    The results showed that EEG, ECG, and pulse signals could be combined to estimate factors influencing driving performance, and that these estimates could then be used to assess overall human performance in simulated driving scenarios.
+  next_slug: auditable-unlearning
+  next_relation: Previous Research Project

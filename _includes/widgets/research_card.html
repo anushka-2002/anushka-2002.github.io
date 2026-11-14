@@ -1,0 +1,11 @@
+<div class="my-3 p-0 bg-white shadow-sm rounded-xl">
+    {% unless include.hide_heading %}
+    <h6 class="d-flex justify-content-between align-items-center border-bottom border-gray p-3 mb-0">
+        <span>Research</span>
+        {% if include.view_all %}<a class="small font-weight-normal" href="{{ '/research/' | relative_url }}">View all research →</a>{% endif %}
+    </h6>
+    {% endunless %}
+    {% for item in include.items %}
+        {% include widgets/publication_item.html item=item first=forloop.first last=forloop.last %}
+    {% endfor %}
+</div>

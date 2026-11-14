@@ -16,8 +16,8 @@ navbar_title: Home
         {% include widgets/debug_repo_name.html %}
         {% include widgets/debug_url.html %}
 
-        {% if site.data.display.homepage.show_experience %}
-            {% include widgets/experience_card.html %}
+        {% if site.data.display.homepage.show_education %}
+            {% include widgets/education_card.html %}
         {% endif %}
 
         {% if site.data.display.homepage.show_news %}
@@ -27,13 +27,8 @@ navbar_title: Home
         {% endif %}
         {% endif %}
 
-        {% if site.data.display.homepage.show_selected_publications %}
-        {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
-        {%
-        include widgets/publication_card.html
-        publications=pubs
-        title='<i class="fas fa-star"></i> Selected Publications'
-        %}
+        {% if site.data.display.homepage.show_research %}
+        {% include widgets/research_card.html items=site.data.research view_all=true %}
         {% endif %}
     </div>
 </div>

@@ -1,8 +1,259 @@
 @charset "utf-8";
+:root {
+    --bg-canvas: #F6F5F0;
+    --bg-card: #FCFBF8;
+    --border-subtle: #E4E2D8;
+    --text-primary: #1F2421;
+    --text-muted: #59625C;
+    --pill-bg: #EBF0EC;
+    --pill-text: #2F5746;
+    --pill-border: #D9E2DC;
+    --accent: #3B6B56;
+    --accent-hover: #2A5040;
+}
+
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     padding-top: 5.0rem;
+    background-color: var(--bg-canvas) !important;
+    color: var(--text-primary);
+}
+
+.bg-light {
+    background-color: var(--bg-canvas) !important;
+    color: var(--text-primary);
+}
+
+.bg-white,
+.card {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border-subtle) !important;
+    box-shadow: 0 1px 3px rgba(31, 36, 33, 0.03) !important;
+    color: var(--text-primary);
+}
+
+.shadow-sm {
+    box-shadow: 0 1px 3px rgba(31, 36, 33, 0.03) !important;
+}
+
+.border,
+.border-top,
+.border-right,
+.border-bottom,
+.border-left,
+.border-gray {
+    border-color: var(--border-subtle) !important;
+}
+
+.text-body,
+.text-dark {
+    color: var(--text-primary) !important;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+.text-primary {
+    color: var(--accent) !important;
+}
+
+.text-primary:hover {
+    color: var(--accent-hover) !important;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    text-underline-offset: 0.18em;
+    transition: color 0.15s ease;
+}
+
+a:hover,
+a:focus {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+.btn-link {
+    color: var(--accent);
+}
+
+.btn-link:hover,
+.btn-link:focus {
+    color: var(--accent-hover);
+}
+
+.navbar-light .navbar-brand {
+    color: var(--text-primary);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--text-muted);
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+    color: var(--accent-hover);
+}
+
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show > .nav-link {
+    color: var(--accent);
+}
+
+.navbar-light .navbar-toggler {
+    color: var(--text-muted);
+    border-color: var(--border-subtle);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background-color: var(--accent);
+    color: var(--bg-card);
+}
+
+.badge,
+.badge-light,
+.badge-primary,
+.badge-secondary,
+.badge-success,
+.badge-info,
+.badge-warning,
+.badge-danger {
+    background-color: var(--pill-bg) !important;
+    border: 1px solid var(--pill-border);
+    color: var(--pill-text) !important;
+}
+
+.abstract-links a {
+    display: inline-block;
+    margin-right: 0.25rem;
+    padding: 0.1rem 0.3rem;
+    border: 1px solid var(--pill-border);
+    border-radius: 0.25rem;
+    background-color: var(--pill-bg);
+    color: var(--pill-text);
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+}
+
+.abstract-links a:hover,
+.abstract-links a:focus {
+    color: var(--accent-hover);
+    border-color: var(--accent);
+}
+
+.social-link {
+    color: var(--text-muted) !important;
+    text-decoration: none !important;
+    transition: color 0.15s ease;
+}
+
+.social-link:hover,
+.social-link:focus {
+    color: var(--accent) !important;
+}
+
+.img-thumbnail {
+    background-color: var(--bg-card);
+    border-color: var(--border-subtle);
+}
+
+.research-card-item {
+    border-radius: 0.5rem;
+    outline: 1px solid transparent;
+    cursor: pointer;
+    transition: box-shadow 0.16s ease, outline-color 0.16s ease;
+}
+
+.research-card-item:hover,
+.research-card-item:focus-within {
+    outline: 1px solid var(--border-subtle);
+    box-shadow: 0 2px 6px rgba(31, 36, 33, 0.06);
+    z-index: 2;
+}
+
+.research-title-link,
+.research-title-link:hover,
+.research-title-link:focus {
+    text-decoration: none;
+}
+
+.research-card-cue {
+    color: var(--accent);
+}
+
+.research-detail {
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.research-topic-tag {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: 50rem;
+    background-color: var(--bg-card);
+    color: var(--text-muted);
+}
+
+.research-action-pill {
+    display: inline-block;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid var(--pill-border);
+    border-radius: 0.5rem;
+    background-color: var(--pill-bg);
+    color: var(--pill-text);
+    text-decoration: none;
+}
+
+.research-action-pill:hover,
+.research-action-pill:focus {
+    border-color: var(--accent);
+    background-color: var(--pill-bg);
+    color: var(--accent-hover);
+    text-decoration: none;
+}
+
+.research-section + .research-section {
+    border-top: 1px solid var(--border-subtle);
+}
+
+.research-stat {
+    border: 1px solid var(--pill-border);
+    border-radius: 0.5rem;
+    background-color: var(--pill-bg);
+    color: var(--pill-text);
+}
+
+.research-next-card {
+    display: block;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.research-next-card:hover,
+.research-next-card:focus {
+    border-color: var(--accent);
+    color: var(--text-primary);
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(31, 36, 33, 0.06);
+}
+
+.research-hero-image {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.5rem;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -43,9 +294,10 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0.6) !important;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background-color: rgba(246, 245, 240, 0.88) !important;
+    border-bottom: 1px solid var(--border-subtle);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .inline-badge {
@@ -118,7 +370,7 @@ div.lazy {
     padding: 0;
     margin: 0 3px;
     cursor: pointer;
-    background-color: #fff;
+    background-color: var(--bg-card);
     background-clip: padding-box;
     border: 0;
     border-top: 10px solid transparent;
@@ -132,17 +384,17 @@ div.lazy {
 }
 
 .carousel-indicators button:focus-visible {
-    outline: 2px solid #fff;
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
-    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 0 4px rgba(31, 36, 33, 0.12);
 }
 
 .carousel-control-prev:focus-visible .carousel-control-prev-icon,
 .carousel-control-next:focus-visible .carousel-control-next-icon {
-    outline: 2px solid #fff;
+    outline: 2px solid var(--accent);
     outline-offset: 4px;
     border-radius: 2px;
-    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 0 6px rgba(31, 36, 33, 0.12);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,0 +1,34 @@
+{% if site.data.profile.education %}
+<div class="my-3 bg-white shadow-sm rounded-xl">
+    <h6 class="p-3 mb-0 border-bottom border-gray">Education</h6>
+    <div class="p-3 p-md-4">
+        {% for item in site.data.profile.education %}
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start mb-2">
+            <div>
+                <div class="font-weight-bold">{{ item.name }}</div>
+                <div class="small text-muted">{{ item.degree }}</div>
+            </div>
+            <div class="d-flex flex-wrap align-items-center mt-2 mt-md-0">
+                <span class="badge badge-light text-muted font-weight-normal px-2 py-1">{{ item.period }}</span>
+                <span class="badge badge-light text-muted font-weight-normal px-2 py-1 ml-2">CGPA: {{ item.cgpa }}</span>
+            </div>
+        </div>
+
+        {% comment %}
+        <div class="small mb-2">
+            <span class="font-weight-bold">B.Tech Thesis:</span>
+            <span class="text-muted">{{ item.thesis }}</span>
+        </div>
+        {% endcomment %}
+
+        {% if item.coursework %}
+        <div class="d-flex flex-wrap">
+            {% for course in item.coursework %}
+            <span class="badge badge-light text-muted font-weight-normal mr-1 mb-1">{{ course }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}

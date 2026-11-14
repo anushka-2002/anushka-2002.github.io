@@ -1,0 +1,108 @@
+---
+layout: default
+---
+{% assign project = site.data.research | where: "slug", page.research_slug | first %}
+{% assign next_project = site.data.research | where: "slug", project.next_slug | first %}
+
+<div class="research-detail py-4">
+    <a class="small" href="{{ '/research/' | relative_url }}">← Back to Research</a>
+
+    <header class="my-3">
+        <h1 class="h2 mb-2">{{ project.detail_title }}</h1>
+        {% if project.authors %}
+        <p class="small text-muted mb-2">{% include widgets/author_list.html authors=project.authors %} · {{ project.detail_metadata }}</p>
+        {% else %}
+        <p class="small text-muted mb-2">{{ project.detail_metadata }}</p>
+        {% endif %}
+        {% if project.paper_url %}
+        <a class="badge badge-light research-action-pill" href="{{ project.paper_url }}" target="_blank" rel="noopener noreferrer">{{ project.paper_button }}</a>
+        {% endif %}
+    </header>
+
+    {% if project.slug == "auditable-unlearning" %}
+    <figure class="mb-3">
+        <img class="research-hero-image" src="{{ project.hero_image | relative_url }}" alt="Unlearning approach overview diagram">
+        {% if project.hero_caption %}<figcaption class="small text-muted mt-2">{{ project.hero_caption }}</figcaption>{% endif %}
+    </figure>
+
+    <div class="bg-white shadow-sm rounded-xl p-3 p-md-4 mb-3">
+        <section class="research-section pb-3">
+            <h2 class="h5 mb-3">{{ project.problem_heading }}</h2>
+            {% for paragraph in project.problem_paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+        </section>
+
+        <section class="research-section py-3">
+            <h2 class="h5 mb-3">{{ project.insight_heading }}</h2>
+            <p>{{ project.insight_paragraph }}</p>
+            <p>{{ project.insight_lead }}</p>
+            <ul class="mb-0">
+                {% for bullet in project.insight_bullets %}<li class="mb-2">{{ bullet }}</li>{% endfor %}
+            </ul>
+        </section>
+
+        <section class="research-section py-3">
+            <h2 class="h5 mb-3">{{ project.approach_heading }}</h2>
+            <ul class="mb-0">
+                {% for bullet in project.approach_bullets %}<li class="mb-2">{{ bullet }}</li>{% endfor %}
+            </ul>
+        </section>
+
+        <section class="research-section pt-3">
+            <h2 class="h5 mb-3">{{ project.findings_heading }}</h2>
+            <p>{{ project.findings_lead }}</p>
+            <ul class="mb-0">
+                {% for bullet in project.findings_bullets %}<li class="mb-2">{{ bullet }}</li>{% endfor %}
+            </ul>
+        </section>
+    </div>
+    {% elsif project.slug == "vr-driver-performance" %}
+    <figure class="mb-3">
+        <img class="research-hero-image" src="{{ project.hero_image | relative_url }}" alt="{{ project.detail_title }} overview diagram">
+        {% if project.hero_caption %}<figcaption class="small text-muted mt-2">{{ project.hero_caption }}</figcaption>{% endif %}
+    </figure>
+
+    <div class="bg-white shadow-sm rounded-xl p-3 p-md-4 mb-3">
+        <section class="research-section pb-3">
+            <h2 class="h5 mb-3">{{ project.problem_heading }}</h2>
+            {% for paragraph in project.problem_paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+        </section>
+
+        <section class="research-section py-3">
+            <h2 class="h5 mb-3">{{ project.design_heading }}</h2>
+            {% for paragraph in project.design_paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+            <ul class="mb-0">
+                {% for bullet in project.design_bullets %}<li class="mb-2">{{ bullet }}</li>{% endfor %}
+            </ul>
+        </section>
+
+        <section class="research-section py-3">
+            <h2 class="h5 mb-3">{{ project.approach_heading }}</h2>
+            <p>{{ project.approach_intro }}</p>
+            <ul class="mb-0">
+                {% for bullet in project.approach_bullets %}<li class="mb-2">{{ bullet }}</li>{% endfor %}
+            </ul>
+        </section>
+
+        <section class="research-section pt-3">
+            <h2 class="h5 mb-3">{{ project.findings_heading }}</h2>
+            <ul class="mb-0">
+                {% for bullet in project.findings_bullets %}<li class="mb-2">{{ bullet }}</li>{% endfor %}
+            </ul>
+            <p class="mt-3 mb-0">{{ project.closing_paragraph }}</p>
+        </section>
+    </div>
+    {% else %}
+    <figure class="mb-3">
+        <img class="research-hero-image" src="{{ project.hero_image | relative_url }}" alt="{{ project.detail_title }} overview diagram">
+        {% if project.hero_caption %}<figcaption class="small text-muted mt-2">{{ project.hero_caption }}</figcaption>{% endif %}
+    </figure>
+
+    <div class="bg-white shadow-sm rounded-xl p-3 p-md-4 mb-3">
+        {% for paragraph in project.paragraphs %}
+        <p class="{% if forloop.last %}mb-0{% endif %}">{{ paragraph }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <p class="mt-4 mb-0"><a href="{{ next_project.project_url | relative_url }}">{{ project.next_relation }}: {{ next_project.detail_title }} →</a></p>
+</div>

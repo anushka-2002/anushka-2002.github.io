@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 560" role="img" aria-label="GapWiden and GapVeil overview placeholder">
+  <rect x="1" y="1" width="1398" height="558" rx="20" fill="#FCFBF8" stroke="#E4E2D8" stroke-width="2"/>
+  <rect x="72" y="96" width="510" height="368" rx="18" fill="#EBF0EC" stroke="#D9E2DC" stroke-width="2"/>
+  <rect x="818" y="96" width="510" height="368" rx="18" fill="#EBF0EC" stroke="#D9E2DC" stroke-width="2"/>
+  <text x="327" y="172" fill="#2F5746" font-family="Lato, sans-serif" font-size="38" font-weight="700" text-anchor="middle">GapWiden</text>
+  <text x="1073" y="172" fill="#2F5746" font-family="Lato, sans-serif" font-size="38" font-weight="700" text-anchor="middle">GapVeil</text>
+  <text x="327" y="220" fill="#59625C" font-family="Lato, sans-serif" font-size="24" text-anchor="middle">Provider audit signal</text>
+  <text x="1073" y="220" fill="#59625C" font-family="Lato, sans-serif" font-size="24" text-anchor="middle">Private generated outputs</text>
+  <rect x="128" y="276" width="398" height="112" rx="12" fill="#FCFBF8" stroke="#E4E2D8" stroke-width="2"/>
+  <rect x="874" y="276" width="398" height="112" rx="12" fill="#FCFBF8" stroke="#E4E2D8" stroke-width="2"/>
+  <path d="M176 348h72l35-40 43 51 42-65 44 54h66" fill="none" stroke="#3B6B56" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M920 348h72l35-40 43 51 42-65 44 54h66" fill="none" stroke="#3B6B56" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M620 332h160m-36-28 36 28-36 28" fill="none" stroke="#3B6B56" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

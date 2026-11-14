@@ -1,58 +1,46 @@
-primary_name: "Your Name"
+primary_name: "Anushka Srivastava"
 secondary_name: ""
-navbar_name: "Your Name"
+navbar_name: "Anushka Srivastava"
 
 positions:
-- name: Title or Position
-- name: Affiliation Name
-  logo: /assets/images/badges/MIT_Social_circle.png  # Logo is optional
+- name: Software Engineer at Google
 
 
-email: "your@email.com"
+email: ""
 # cv_link: link-to-your-cv-file
-gscholar: xFmQpf4AAAAJ  # This is an example, replace it with your own Google Scholar ID
-github: your_github_id
-twitter: your_twitter_id  # Do not include the '@' symbol
-# linkedin: your-linked-in-id
+gscholar: ""
+github: anushka-2002
+linkedin: https://www.linkedin.com/in/anushka-srivastava-6431b3212/
 # orcid: 0000-0000-0000-0000
 
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    A <a href="https://en.wikipedia.org/wiki/Bicolor_cat" target="_blank">bicolor cat</a> is a cat with white fur combined with fur of some other colour, for example solid black, tabby, or colourpointed.
+    I’m a Software Engineer at Google Cloud, working on large-scale distributed data systems and multi-agent workflows. Working on reliability challenges in both areas has shaped my interest in how complex systems behave, how they can be made more reliable, and how models represent and retain knowledge.
   </p>
   <p>
-    There are various patterns of a bicolour cat. These range from the Van-patterned (colour on the crown of the head 
-    and the tail only) to a solid colour with a throat locket or medallion. Bicolour coats are found in many cat breeds, 
-    as well as being common in domestic longhair and domestic shorthair cats.
+    My recent research focuses on machine unlearning: removing targeted knowledge from language models while preserving their broader capabilities, and developing ways to statistically verify that the removal has taken place. I completed my B.Tech. (Hons.) in Computer Science and Engineering at IIT Kharagpur in 2024.
+  </p>
+  <p>
+    My broader research interests include large language models, post-training, representation learning, reasoning, and multi-agent systems.
   </p>
 
 portrait_url: /assets/images/photos/portrait.jpg
-portrait_caption: >-
-  Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
+# portrait_caption: >-
+#   Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
 
 education:
-- name: Massachusetts Institute of Technology
-  logo: /assets/images/badges/MIT_Social_circle.png
-  position: >- 
-    Department of Electrical Engineering and Computer Science <br/>
-    Ph.D. Student
-  date: Sep. 2024 - present
-- name: Peking University
-  logo: /assets/images/badges/PKU_red.png
-  position: B.S. in Computer Science
-  date: Sep. 2019 - Jul. 2021
-
-# experience:
-# - name: Peking University
-#   logo: /assets/images/badges/PKU_red.png
-#   position: Research Intern
-#   date: Sep. 2019 - Jul. 2021
-
-awards:
-- name: Award Name 2
-  date: 2024
-- name: Award Name 1 
-  date: 2021
-- name: A quick brown fox jumps over the lazy dog and runs away award
-  date: 2021
+  - name: Indian Institute of Technology, Kharagpur
+    degree: B.Tech (Hons.) in Computer Science and Engineering
+    period: 2020 – 2024
+    cgpa: 9.18 / 10.0
+    # thesis: Evaluating driver performance from predicted performance-shaping factors (attention, anxiety, and mental workload) using EEG, ECG, and pulse signals in a VR driving simulator — advised by Prof. Debasis Samanta.
+    # coursework:
+    #   - Deep Learning
+    #   - Machine Learning
+    #   - Statistical Inference
+    #   - Probability & Statistics
+    #   - Linear Algebra
+    #   - Operating Systems
+    #   - Database Management Systems
+    #   - Compilers
