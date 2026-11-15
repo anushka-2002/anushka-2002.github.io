@@ -1,0 +1,41 @@
+---
+layout: default
+title: Experience
+navbar_title: Experience
+---
+
+<div class="experience-page py-4">
+    <header class="mb-4">
+        <h1 class="mb-0">Experience</h1>
+        <p class="small text-muted mt-2 mb-0">Professional and research roles, organized by year.</p>
+    </header>
+
+    <div class="experience-timeline">
+        <div class="experience-column-headings">
+            <h2 class="h5 mb-0">Professional Experience</h2>
+            <div aria-hidden="true"></div>
+            <h2 class="h5 mb-0">Research Experience</h2>
+        </div>
+
+        {% assign timeline_years = site.data.profile.experience | group_by_exp: "entry", "entry.year" | sort: "name" | reverse %}
+        {% for timeline_year in timeline_years %}
+        {% assign professional_items = timeline_year.items | where: "category", "professional" %}
+        {% assign research_items = timeline_year.items | where: "category", "research" %}
+        <div class="experience-year-row">
+            <div class="experience-side experience-side-professional">
+                {% for item in professional_items %}
+                    {% include widgets/experience_timeline_card.html item=item category_label="Professional Experience" %}
+                {% endfor %}
+            </div>
+            <div class="experience-year-marker">
+                <span class="badge badge-light text-muted font-weight-normal px-2 py-1">{{ timeline_year.name }}</span>
+            </div>
+            <div class="experience-side experience-side-research">
+                {% for item in research_items %}
+                    {% include widgets/experience_timeline_card.html item=item category_label="Research Experience" %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

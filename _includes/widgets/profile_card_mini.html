@@ -75,13 +75,11 @@
                         </a>
                         {% endif %}
 
-                        {% comment %}
                         {% if site.data.profile.cv_link and site.data.profile.cv_link != "" %}
-                        <a class="px-1 no-break social-link" target="_blank" rel="noopener noreferrer" href="{{ site.data.profile.cv_link | relative_url }}" aria-label="Curriculum Vitae" title="Curriculum Vitae">
-                            <i class="fas fa-file-pdf"></i>
+                        <a class="px-1 no-break social-link cv-icon-label" target="_blank" rel="noopener noreferrer" href="{{ site.data.profile.cv_link | relative_url }}" title="Curriculum Vitae" aria-label="Curriculum Vitae">
+                            CV
                         </a>
                         {% endif %}
-                        {% endcomment %}
                     </div>
                 </div>
             </div>

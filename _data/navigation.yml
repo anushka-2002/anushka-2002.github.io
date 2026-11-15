@@ -3,6 +3,11 @@ pages:
   url: /
 - name: Research
   url: /research/
+- name: Experience
+  url: /experience/
+- name: Resume
+  url: /assets/files/Anushka_Srivastava_CV.pdf
+  target: _blank
 - name: Publications
   url: /publications
   enabled: false # Set to true to restore the navigation link.

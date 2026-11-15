@@ -10,7 +10,7 @@
                 {% for item in site.data.navigation.pages %}
                 {% if item.enabled != false %}
                 <li class="nav-item {% if item.name == page.navbar_title or include.active_page == item.name %}active{% endif %}">
-                    <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.name }}</a>
+                    <a class="nav-link" href="{{ item.url | relative_url }}"{% if item.target %} target="{{ item.target }}" rel="noopener noreferrer"{% endif %}>{{ item.name }}</a>
                 </li>
                 {% endif %}
                 {% endfor %}
