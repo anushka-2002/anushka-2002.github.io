@@ -10,6 +10,28 @@
     --pill-border: #D9E2DC;
     --accent: #3B6B56;
     --accent-hover: #2A5040;
+    --navbar-bg: rgba(246, 245, 240, 0.88);
+    --shadow-card: 0 1px 3px rgba(31, 36, 33, 0.03);
+    --shadow-hover: 0 2px 6px rgba(31, 36, 33, 0.06);
+    --focus-ring: rgba(31, 36, 33, 0.12);
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg-canvas: #0B0C0B;
+    --bg-card: #1A1E1B;
+    --border-subtle: #303832;
+    --text-primary: #F1F3F1;
+    --text-muted: #AAB1AC;
+    --pill-bg: #252C27;
+    --pill-text: #B8D5C0;
+    --pill-border: #343D37;
+    --accent: #91B99C;
+    --accent-hover: #B1D4BA;
+    --navbar-bg: rgba(11, 12, 11, 0.94);
+    --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.55);
+    --shadow-hover: 0 2px 7px rgba(0, 0, 0, 0.7);
+    --focus-ring: rgba(145, 185, 156, 0.35);
 }
 
 body {
@@ -29,12 +51,12 @@ body {
 .card {
     background-color: var(--bg-card) !important;
     border: 1px solid var(--border-subtle) !important;
-    box-shadow: 0 1px 3px rgba(31, 36, 33, 0.03) !important;
+    box-shadow: var(--shadow-card) !important;
     color: var(--text-primary);
 }
 
 .shadow-sm {
-    box-shadow: 0 1px 3px rgba(31, 36, 33, 0.03) !important;
+    box-shadow: var(--shadow-card) !important;
 }
 
 .border,
@@ -52,6 +74,10 @@ body {
 }
 
 .text-muted {
+    color: var(--text-muted) !important;
+}
+
+.text-secondary {
     color: var(--text-muted) !important;
 }
 
@@ -107,6 +133,26 @@ a:focus {
 .navbar-light .navbar-toggler {
     color: var(--text-muted);
     border-color: var(--border-subtle);
+}
+
+.navbar-theme-toggle {
+    border: 0;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.navbar-theme-toggle:hover,
+.navbar-theme-toggle:focus {
+    color: var(--accent-hover) !important;
+    text-decoration: none;
+}
+
+.navbar-theme-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 0.25rem;
 }
 
 .nav-pills .nav-link.active,
@@ -179,7 +225,7 @@ a:focus {
 .research-card-item:hover,
 .research-card-item:focus-within {
     outline: 1px solid var(--border-subtle);
-    box-shadow: 0 2px 6px rgba(31, 36, 33, 0.06);
+    box-shadow: var(--shadow-hover);
     z-index: 2;
 }
 
@@ -393,7 +439,7 @@ a:focus {
     border-color: var(--accent);
     color: var(--text-primary);
     text-decoration: none;
-    box-shadow: 0 2px 6px rgba(31, 36, 33, 0.06);
+    box-shadow: var(--shadow-hover);
 }
 
 .research-hero-image {
@@ -444,7 +490,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .navbar {
-    background-color: rgba(246, 245, 240, 0.88) !important;
+    background-color: var(--navbar-bg) !important;
     border-bottom: 1px solid var(--border-subtle);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -536,7 +582,7 @@ div.lazy {
 .carousel-indicators button:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
-    box-shadow: 0 0 0 4px rgba(31, 36, 33, 0.12);
+    box-shadow: 0 0 0 4px var(--focus-ring);
 }
 
 .carousel-control-prev:focus-visible .carousel-control-prev-icon,
@@ -544,7 +590,11 @@ div.lazy {
     outline: 2px solid var(--accent);
     outline-offset: 4px;
     border-radius: 2px;
-    box-shadow: 0 0 0 6px rgba(31, 36, 33, 0.12);
+    box-shadow: 0 0 0 6px var(--focus-ring);
+}
+
+hr {
+    border-color: var(--border-subtle);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,0 +1,11 @@
+<script>
+(function () {
+    try {
+        if (localStorage.getItem("academic-homepage-theme") === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+        }
+    } catch (error) {
+        // Keep the default light theme when browser storage is unavailable.
+    }
+})();
+</script>
