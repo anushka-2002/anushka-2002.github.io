@@ -1,0 +1,22 @@
+{% if site.data.profile.experience %}
+<div class="my-3 bg-white shadow-sm rounded-xl">
+    <h6 class="p-3 mb-0 border-bottom border-gray">Experience</h6>
+    <div class="p-3 p-md-4 experience-list">
+        {% for item in site.data.profile.experience %}
+        <div class="experience-entry position-relative d-flex flex-column flex-md-row py-3">
+            <span class="experience-dot" aria-hidden="true"></span>
+            <div class="experience-period flex-shrink-0 mb-2 mb-md-0">
+                <span class="badge badge-light text-muted font-weight-normal px-2 py-1">{{ item.period }}</span>
+            </div>
+            <div class="flex-grow-1">
+                <div>
+                    <span class="font-weight-bold">{{ item.company }}</span>
+                    <span class="small text-muted">· {{ item.role }}</span>
+                </div>
+                <p class="small text-muted mt-1 mb-0 experience-summary">{{ item.summary }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}

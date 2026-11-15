@@ -7,7 +7,19 @@ navbar_title: Research
 <div class="research-detail py-4">
     <header class="mb-4">
         <h1 class="mb-2">Research</h1>
+        <p class="small text-muted mb-0">Exploring how intelligent systems represent knowledge, reason, and behave, and how we can make them more reliable.</p>
     </header>
+
+    <div class="row mb-3">
+        {% for theme in site.data.display.research_themes %}
+        <div class="col-md-6 mb-3">
+            <section class="bg-white shadow-sm rounded-xl p-3 h-100 research-focus-card">
+                <div class="font-weight-bold text-body mb-1">{{ theme.title }}</div>
+                <p class="small text-muted mb-0">{{ theme.question }}</p>
+            </section>
+        </div>
+        {% endfor %}
+    </div>
 
     {% include widgets/research_card.html items=site.data.research hide_heading=true %}
 </div>

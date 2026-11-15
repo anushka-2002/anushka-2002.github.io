@@ -1,8 +1,15 @@
 homepage:
   show_education: true
+  show_experience: true
   show_news: true
   show_research: true
   num_news: 10
+
+research_themes:
+  - title: Machine Unlearning & Model Behavior
+    question: How can targeted knowledge and behaviours be removed from language models without compromising their broader capabilities? I am interested in post-training and inference-time methods, and in understanding how forgetting manifests in model representations and outputs.
+  - title: Reliable Agents & Systems
+    question: How can we make complex AI systems reliable across multiple components and long-running interactions? I am interested in agent evaluation, failure analysis, and verification in multi-agent workflows and distributed systems.
 
 # Feel free to replace the footer text if you would like to, but I will greatly appreciate it 
 # if you keep the link to the template so that more people can benefit from it. Thanks!

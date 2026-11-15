@@ -27,6 +27,10 @@ navbar_title: Home
         {% endif %}
         {% endif %}
 
+        {% if site.data.display.homepage.show_experience %}
+            {% include widgets/experience_card.html %}
+        {% endif %}
+
         {% if site.data.display.homepage.show_research %}
         {% include widgets/research_card.html items=site.data.research view_all=true %}
         {% endif %}

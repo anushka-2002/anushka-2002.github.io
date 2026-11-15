@@ -7,8 +7,8 @@ positions:
 
 
 email: ""
-# cv_link: link-to-your-cv-file
-gscholar: ""
+cv_link: ""
+gscholar: https://scholar.google.com/citations?user=VrzAz9wAAAAJ&hl=en
 github: anushka-2002
 linkedin: https://www.linkedin.com/in/anushka-srivastava-6431b3212/
 # orcid: 0000-0000-0000-0000
@@ -44,3 +44,29 @@ education:
     #   - Operating Systems
     #   - Database Management Systems
     #   - Compilers
+
+experience:
+  - role: Software Engineer (L4)
+    company: Google
+    period: Oct 2025 – Present
+    summary: Building large-scale Google Cloud replication services and developing multi-agent LLM workflows.
+  - role: Research Collaborator
+    company: Representation Learning Lab, IISc
+    period: Apr 2026 – Present
+    summary: Investigating auditable machine unlearning, with a focus on verifying forgetting while preserving model capabilities and limiting membership inference.
+  - role: Software Engineer (L3)
+    company: Google
+    period: Jun 2024 – Oct 2025
+    summary: Built replication and backfill pipelines for Google Cloud's migration and replication services.
+  - role: Undergraduate Thesis Research
+    company: HCI-BCI Lab, IIT Kharagpur
+    period: Aug 2023 – May 2024
+    summary: Developed a VR-based driving experiment to assess overall driver performance by estimating attention, anxiety, and mental workload from EEG, ECG, and pulse signals.
+  - role: Software Engineering Intern
+    company: Google
+    period: May – Jul 2023
+    summary: Built a Kubernetes-based performance testing framework for Google Cloud Datastream.
+  - role: STEP Intern
+    company: Google
+    period: May – Jul 2022
+    summary: Built a parallel C++ data pipeline for IAM workflows in Google Cloud Spanner.
